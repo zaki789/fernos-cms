@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^(app|database)/ - [F,L]
+RewriteRule ^uploads/.*\.php$ - [F,L,NC]
+RewriteRule ^app/config/ - [F,L]
+<FilesMatch "^(\.env|config\.php|.*\.sql)$">
+    Require all denied
+</FilesMatch>

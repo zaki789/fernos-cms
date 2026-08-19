@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /install/
+Disallow: /app/
+Disallow: /database/
+Disallow: /storage/
+Allow: /

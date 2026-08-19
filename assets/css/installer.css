@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --green: #013a17;
+    --green-2: #075628;
+    --cream: #f8f0e2;
+    --gold: #988c75;
+    --ink: #1f2a22;
+    --danger: #a93636;
+    --card: rgba(255, 255, 255, .88);
+    --border: rgba(1, 58, 23, .12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 12% 10%, rgba(152, 140, 117, .28), transparent 28rem),
+        radial-gradient(circle at 92% 88%, rgba(1, 58, 23, .18), transparent 32rem),
+        var(--cream);
+}
+
+button, input, select { font: inherit; }
+
+.installer-shell {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 48px 0 30px;
+}
+
+.installer-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 74px;
+    height: 74px;
+    border-radius: 24px;
+    color: #fff;
+    font: 800 36px/1 Georgia, serif;
+    background: linear-gradient(145deg, var(--green-2), var(--green));
+    box-shadow: 0 20px 50px rgba(1, 58, 23, .24);
+}
+
+.eyebrow {
+    margin: 0 0 7px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.installer-brand h1 {
+    margin: 0;
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+.installer-brand p:last-child {
+    margin: 5px 0 0;
+    color: #68736c;
+}
+
+.installer-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    background: var(--card);
+    box-shadow: 0 30px 80px rgba(31, 42, 34, .13);
+    backdrop-filter: blur(18px);
+}
+
+.requirements {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, .55);
+}
+
+.requirements h2 { margin: 0; font-size: 22px; }
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
+    gap: 8px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.check-item span {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-weight: 800;
+}
+
+.check-item.passed span { color: #0d6b33; background: #dff5e6; }
+.check-item.failed span { color: var(--danger); background: #fde7e7; }
+
+.alert {
+    margin: 24px 32px 0;
+    padding: 16px 18px;
+    border-radius: 18px;
+}
+
+.alert.error {
+    color: #7f2222;
+    border: 1px solid #efb8b8;
+    background: #fff0f0;
+}
+
+.alert ul { margin: 8px 0 0; }
+
+.installer-form { padding: 10px 32px 32px; }
+
+.form-section {
+    padding: 26px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.section-heading > span {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    color: #fff;
+    background: var(--green);
+    font-weight: 800;
+}
+
+.section-heading h3 { margin: 0; }
+.section-heading p { margin: 3px 0 0; color: #748078; font-size: 13px; }
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.field.full { grid-column: 1 / -1; }
+
+.field {
+    display: grid;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 13px 14px;
+    color: var(--ink);
+    border: 1px solid rgba(1, 58, 23, .17);
+    border-radius: 14px;
+    outline: 0;
+    background: rgba(255, 255, 255, .88);
+    transition: .2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(1, 58, 23, .09);
+}
+
+.install-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 26px;
+    padding: 17px 20px;
+    color: #fff;
+    border: 0;
+    border-radius: 18px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--green-2), var(--green));
+    box-shadow: 0 16px 34px rgba(1, 58, 23, .2);
+}
+
+.install-button span { font-weight: 800; }
+.install-button small { opacity: .75; }
+
+.result {
+    padding: 70px 30px;
+    text-align: center;
+}
+
+.result-icon {
+    display: grid;
+    place-items: center;
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 22px;
+    border-radius: 24px;
+    color: #fff;
+    background: var(--green);
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.result h2 { margin: 0 0 10px; font-size: 30px; }
+.result p { color: #6c776f; }
+
+.credentials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 26px 0;
+}
+
+.credentials span {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.button {
+    padding: 12px 17px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.button.primary { color: #fff; background: var(--green); }
+.button.ghost { color: var(--green); border: 1px solid var(--green); }
+
+.security-note { margin-top: 24px; font-size: 13px; }
+code { direction: ltr; display: inline-block; }
+
+footer {
+    padding: 22px;
+    color: #7b867e;
+    text-align: center;
+    font-size: 12px;
+}
+
+@media (max-width: 760px) {
+    .installer-shell { width: min(100% - 20px, 1100px); padding-top: 24px; }
+    .installer-brand { align-items: flex-start; }
+    .brand-mark { width: 58px; height: 58px; border-radius: 18px; }
+    .requirements { display: block; padding: 24px 20px; }
+    .check-grid { grid-template-columns: 1fr; margin-top: 18px; }
+    .installer-form { padding: 5px 20px 24px; }
+    .field-grid { grid-template-columns: 1fr; }
+    .field.full { grid-column: auto; }
+    .install-button { align-items: flex-start; flex-direction: column; gap: 4px; }
+}

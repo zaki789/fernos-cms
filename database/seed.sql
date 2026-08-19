@@ -1,0 +1,10 @@
+USE `fernosa`;
+INSERT IGNORE INTO roles (name, slug) VALUES ('مدیر کل', 'super-admin'), ('مدیر محتوا', 'content-manager'), ('اپراتور منو', 'menu-operator');
+INSERT IGNORE INTO permissions (name, slug) VALUES ('مدیریت کامل', 'manage-all'), ('مدیریت محتوا', 'manage-content'), ('مدیریت منو', 'manage-menu');
+INSERT IGNORE INTO role_permissions (role_id, permission_id) SELECT 1, id FROM permissions;
+INSERT IGNORE INTO role_permissions (role_id, permission_id) SELECT 2, id FROM permissions WHERE slug IN ('manage-content');
+INSERT IGNORE INTO role_permissions (role_id, permission_id) SELECT 3, id FROM permissions WHERE slug IN ('manage-menu');
+INSERT IGNORE INTO settings (setting_key, setting_value) VALUES ('site_name', 'Fernosa'), ('site_title', 'فرنوسا | کافه و رستوران'), ('currency', 'ریال'), ('maintenance_mode', '0'), ('footer_text', 'تجربه‌ای به‌یادماندنی از طعم و آرامش');
+INSERT IGNORE INTO theme_settings (setting_key, setting_value) VALUES ('primary_color', '#013A17'), ('secondary_color', '#F8F0E2'), ('accent_color', '#988C75'), ('mode', 'light');
+INSERT IGNORE INTO categories (title_fa, title_en, slug, color, ordering) VALUES ('قهوه گرم', 'Hot Coffee', 'hot-coffee', '#013A17', 1), ('قهوه سرد', 'Cold Coffee', 'cold-coffee', '#988C75', 2), ('نوشیدنی گرم', 'Hot Drinks', 'hot-drinks', '#A15C38', 3), ('نوشیدنی سرد', 'Cold Drinks', 'cold-drinks', '#2C6872', 4), ('شیک', 'Shake', 'shake', '#7A5267', 5), ('اسموتی', 'Smoothie', 'smoothie', '#58744B', 6), ('صبحانه', 'Breakfast', 'breakfast', '#B18445', 7), ('غذای اصلی', 'Main Course', 'main-course', '#6D4739', 8), ('دسر', 'Dessert', 'dessert', '#9A6471', 9), ('جلاتو', 'Gelato', 'gelato', '#7B6A50', 10);
+INSERT IGNORE INTO pages (slug, title_fa, title_en, content_fa, is_published) VALUES ('about', 'درباره فرنوسا', 'About Fernosa', 'فرنوسا جایی برای مکث، گفتگو و تجربه طعم‌های تازه است.', 1), ('contact', 'تماس با ما', 'Contact Us', 'برای رزرو یا دریافت اطلاعات بیشتر با ما در تماس باشید.', 1);

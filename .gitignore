@@ -1,0 +1,26 @@
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Runtime
+storage/logs/*
+storage/cache/*
+storage/*.lock
+
+# Uploaded/generated files
+uploads/categories/*
+uploads/gallery/*
+uploads/products/*
+uploads/settings/*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+*.bak
